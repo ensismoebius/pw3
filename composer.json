@@ -1,0 +1,27 @@
+{
+    "name": "etec/pw3",
+    "description": "Códigos feitos em sala",
+    "authors": [
+        {
+            "name": "André Furlan",
+            "email": "ensismoebius@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig" : "~3.3",
+        "coffeecode/router": "2.0.*"
+    },
+    
+    "config": {
+        "vendor-dir": "Src/Lib/vendor"
+    },
+    
+    "autoload": {
+        "psr-4": {
+            "Src\\" : "Src"
+        },
+        "files": [
+            "Src/Config.php"
+        ]
+    }
+}
