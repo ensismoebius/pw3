@@ -17,11 +17,13 @@ class Admin {
     }
 
     public function salvarLogin(array $param) {
-        var_dump($param);
         $u = new \Src\Model\Usuarie(
                 $param["login"],
                 $param["senha"]
         );
+        
+        \Src\Lib\BancoDeDados::salvar($u);
+        
     }
 
 }

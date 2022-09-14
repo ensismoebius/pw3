@@ -7,7 +7,7 @@ class BancoDeDados {
     private static \PDO $conexao;
     private static \PDOStatement $resultado;
 
-    public function executaSql(string $sql): bool {
+    public static function executaSql(string $sql): bool {
         try {
             BancoDeDados::$conexao->beginTransaction();
             BancoDeDados::$resultado = BancoDeDados::$conexao->prepare($sql);
@@ -67,8 +67,15 @@ class BancoDeDados {
     public static function salvar(
             \Src\Model\IBancoDeDados $entidade
     ) {
+        $arrEntidade = explode("\\", get_class($entidade));
+        
+        $arrEntidade = array_reverse($arrEntidade, true);
+        
+        $tabela = $arrEntidade[0];
+        
+        
         $sql = implode(",", $entidade->getCampos());
-        $sql = "insert into Usuario(" . $sql . ")";
+        $sql = "insert into " . $tabela . "(" . $sql . ")";
         $sql = $sql . "values('";
         $sql = $sql . implode("','", $entidade->getValores());
         $sql = $sql . "')";
