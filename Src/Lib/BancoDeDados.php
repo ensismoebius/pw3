@@ -61,7 +61,7 @@ class BancoDeDados {
     }
 
     public static function fecharConexao() {
-        BancoDeDados::$conexao = null;
+        //BancoDeDados::$conexao = null;
     }
 
     public static function salvar(
@@ -69,7 +69,7 @@ class BancoDeDados {
     ) {
         $arrEntidade = explode("\\", get_class($entidade));
         
-        $arrEntidade = array_reverse($arrEntidade, true);
+        $arrEntidade = array_reverse($arrEntidade);
         
         $tabela = $arrEntidade[0];
         
