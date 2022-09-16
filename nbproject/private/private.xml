@@ -5,9 +5,9 @@
         <group>
             <file>file:/var/www/pw3/index.php</file>
             <file>file:/var/www/pw3/Src/Lib/BancoDeDados.php</file>
-            <file>file:/var/www/pw3/Src/Model/IBancoDeDados.php</file>
             <file>file:/var/www/pw3/Src/Controller/Admin.php</file>
-            <file>file:/var/www/pw3/Src/Controller/Comum.php</file>
+            <file>file:/var/www/pw3/Src/Config.php</file>
+            <file>file:/var/www/pw3/Src/View/Index.html</file>
         </group>
     </open-files>
 </project-private>

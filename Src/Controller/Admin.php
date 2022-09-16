@@ -12,10 +12,11 @@ class Admin {
         //echo $ambiente->render("/html/index.html", $param);
         $param["titulo"] = "Cadastro de usuário";
         $param["destino"] = URL . "/admin/salvar";
+        $param["bootstrapPath"] = "View/bootStrap.css";
 
         echo $ambiente->render("AdminExibirLogin.html", $param);
     }
-
+    
     public function salvarLogin(array $param) {
         $u = new \Src\Model\Usuarie(
                 $param["login"],
