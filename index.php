@@ -18,6 +18,7 @@ $roteador->get("/contato", "Comum:entreEmContato");
 
 $roteador->group("admin");
 $roteador->get("/login", "Admin:exibirLogin");
+$roteador->get("/login2", "Admin:exibirLogin2");
 $roteador->post("/salvar", "Admin:salvarLogin");
 
 $roteador->dispatch();
