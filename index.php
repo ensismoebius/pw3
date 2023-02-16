@@ -1,3 +1,3 @@
 <?php
-print("Alô mundo!");
-echo "uga";
+require './Src/Lib/vendor/autoload.php';
+echo DB_SENHA;
