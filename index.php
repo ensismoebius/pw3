@@ -23,4 +23,4 @@ $roteador->get("/", "Admin:painel");
 
 $roteador->dispatch();
 
-var_dump($roteador->error());
+//var_dump($roteador->error());
