@@ -16,3 +16,11 @@ $roteador->get("/contato/{gerente}", "Comum:entreEmContato");
 $roteador->get("/contato", "Comum:entreEmContato");
 $roteador->get("/", "Comum:principal");
 
+$roteador->group("admin");
+$roteador->get("/login", "Admin:exibirLogin");
+$roteador->post("/salvar", "Admin:salvarLogin");
+$roteador->get("/", "Admin:painel");
+
+$roteador->dispatch();
+
+var_dump($roteador->error());
