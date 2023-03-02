@@ -9,10 +9,11 @@ class Comum {
     }
 
     public function principal() {
-        $carregador = new \Twig\Loader\FilesystemLoader("./Src/View");
-        $ambiente = new \Twig\Environment($carregador);
+        echo "Principal";
+//        $carregador = new \Twig\Loader\FilesystemLoader("./Src/View");
+//        $ambiente = new \Twig\Environment($carregador);
 
-        echo $ambiente->render("principal.html");
+//        echo $ambiente->render("principal.html");
     }
 
 }
