@@ -5,15 +5,27 @@ namespace Src\Controller;
 class Comum {
 
     public function entreEmContato() {
-        echo "Contato";
+        $carregador = new \Twig\Loader\FilesystemLoader("./Src/View");
+        $ambiente = new \Twig\Environment($carregador);
+
+        $dados = array(
+            "titulo" => "Envie sua phophoca"
+        );
+
+        echo $ambiente->render("entreEmContato.html", $dados);
     }
 
     public function principal() {
-        echo "Principal";
-//        $carregador = new \Twig\Loader\FilesystemLoader("./Src/View");
-//        $ambiente = new \Twig\Environment($carregador);
+        $carregador = new \Twig\Loader\FilesystemLoader("./Src/View");
+        $ambiente = new \Twig\Environment($carregador);
 
-//        echo $ambiente->render("principal.html");
+        $dados = array(
+            "manchete" => "Pego roubando cobre",
+            "titulo" => "Diário do Phila",
+            "noticia" => "BOMBA!!!1111 Descoberta a verdadeira fonte de renda!"
+        );
+
+        echo $ambiente->render("principal.html", $dados);
     }
 
 }

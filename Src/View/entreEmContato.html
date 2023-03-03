@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{titulo}}</title>
+        <style>
+            body {
+                background-color: #272727;
+                color: black;
+                font-family: Arial, sans-serif;
+                font-size: 16px;
+                line-height: 1.5;
+                text-align: center;
+                padding-top: 5px;
+            }
+
+            form {
+                display: inline-block;
+                padding: 5px;
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 0px 0px 10px 0px #333;
+                animation: fadein 0.5s;
+            }
+
+            @keyframes fadein {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10%);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            h1{
+                color: white;
+            }
+
+            input {
+                padding: 2px;
+                margin: 2px;
+                border-radius: 5px;
+                border: none;
+                background-color: #eee;
+                color: #333;
+                font-size: 16px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            button[type="submit"] {
+                padding: 10px 20px;
+                margin: 10px;
+                border-radius: 5px;
+                border: none;
+                background-color: #FF6F61;
+                color: white;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.2s;
+                opacity: 0.5;
+                pointer-events: none;
+            }
+
+            button[type="submit"]:hover {
+                background-color: #E6564C;
+            }
+
+            button[type="submit"]:disabled {
+                background-color: #999;
+                cursor: not-allowed;
+                opacity: 0.5;
+            }
+
+            button[type="submit"]:not(:disabled) {
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            label {
+                display: block;
+                margin: 10px 0;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .error {
+                color: red;
+                font-size: 14px;
+                margin-top: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Envie sua Phophoca!</h1>
+        <form id="myForm" action="{url}" method="post">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" required>
+
+            <label for="fofoca">Fofoca:</label>
+            <input type="text" id="fofoca" name="fofoca" required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" required>
+
+            <button type="submit" disabled>Enviar</button>
+        </form>
+
+        <script>
+            const form = document.getElementById('myForm');
+            const inputs = form.querySelectorAll('input');
+            const button = form.querySelector('button[type="submit"]');
+
+            inputs.forEach(input => {
+                input.addEventListener('input', validate);
+            });
+
+            function validate() {
+                let isValid = true;
+
+                inputs.forEach(input => {
+                    if (!input.checkValidity()) {
+                        isValid = false;
+                    }
+                });
+
+                if (isValid) {
+                    button.removeAttribute('disabled');
+                } else {
+                    button.setAttribute('disabled', true);
+                }
+            }
+        </script>
+    </body>
+</html>
