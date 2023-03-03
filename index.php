@@ -14,6 +14,9 @@ $roteador->namespace("Src\Controller");
 $roteador->group(null);
 $roteador->get("/contato/{gerente}", "Comum:entreEmContato");
 $roteador->get("/contato", "Comum:entreEmContato");
+
+$roteador->post("/contato", "Comum:salvarMensagem");
+
 $roteador->get("/", "Comum:principal");
 
 $roteador->group("admin");

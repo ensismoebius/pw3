@@ -4,12 +4,17 @@ namespace Src\Controller;
 
 class Comum {
 
+    public function salvarMensagem($dados) {
+        var_dump($dados);
+    }
+
     public function entreEmContato() {
         $carregador = new \Twig\Loader\FilesystemLoader("./Src/View");
         $ambiente = new \Twig\Environment($carregador);
 
         $dados = array(
-            "titulo" => "Envie sua phophoca"
+            "titulo" => "Envie sua phophoca",
+            "url" => URL . "/contato"
         );
 
         echo $ambiente->render("entreEmContato.html", $dados);
