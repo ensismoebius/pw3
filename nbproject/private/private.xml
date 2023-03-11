@@ -2,6 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/var/www/pw3/index.php</file>
+            <file>file:/var/www/pw3/Src/Lib/BancoDeDados.php</file>
+            <file>file:/var/www/pw3/Src/View/entreEmContato.html</file>
+            <file>file:/var/www/pw3/Src/Model/Fofoca.php</file>
+            <file>file:/var/www/pw3/Src/Controller/Comum.php</file>
+        </group>
     </open-files>
 </project-private>
