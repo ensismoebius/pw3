@@ -1,6 +1,7 @@
 <?php
-
 require './Src/Lib/vendor/autoload.php';
+
+\Src\Lib\BancoDeDados::inicializar(DB_URL, DB_NAME, DB_LOGIN, DB_SENHA);
 
 // Cria o roteador
 $roteador = new CoffeeCode\Router\Router(URL);
