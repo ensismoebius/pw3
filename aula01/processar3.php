@@ -11,14 +11,16 @@ session_start();
 // Inicializa o banco de dados
 inicializar();
 
-// Insere os dados
-salvar(array("gato","cão","pão"));
-salvar(array("um","dois","tres"));
-salvar(array("capivara","pato","tato"));
+$operacao = $_POST["operacao"];
 
-// Apaga os dados
-apagar(3);
+if($operacao == 0){
+    $recebido = $_POST["fruta"];
+    salvar($recebido);
+}else{
+    $codigo = $_POST["codigo"];
+    apagar($codigo);
+}
 
-// Mostra os dados
-var_dump(carregar(0));
-session_destroy();
+echo '<pre>';
+var_dump($_SESSION["dados"]);
+echo '</pre>';

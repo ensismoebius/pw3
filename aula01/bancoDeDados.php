@@ -48,3 +48,4 @@ function apagar(int $id) : void{
 function salvar(array $registro) : void {
     $_SESSION["dados"][] = $registro;
 }
+
