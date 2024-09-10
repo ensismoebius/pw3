@@ -1,0 +1,25 @@
+{
+    "name": "etec/aula02",
+    "description": "aula02",
+    "type": "project",
+    "license": "gpl3",
+    "autoload": {
+        "psr-4": {
+            "Etec\\Aula02\\": "src/"
+        },
+        "files": [
+            "src/Config.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Andre Furlan",
+            "email": "ensismoebius@gmail.com"
+        }
+    ],
+    "minimum-stability": "alpha",
+    "require": {
+        "twig/twig" : "3.4.3",
+        "coffeecode/router" : "1.0.8"
+    }
+}
