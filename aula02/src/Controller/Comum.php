@@ -33,7 +33,7 @@ class Comum
         echo $this->ambiente->render("inicial.html", $info);
     }
 
-    public function sobre($dados)
+    public function sobre($dados): void
     {
         $lista = \Etec\Aula02\Model\Funcionario::carregarTodos();
 
@@ -54,7 +54,7 @@ class Comum
         echo $this->ambiente->render("cadastroFuncionario.html", $dados);
     }
 
-    public function salvar($dados)
+    public function salvar($dados): void
     {
         $funcionario = new \Etec\Aula02\Model\Funcionario();
         $funcionario->nome = $dados['nome'];
