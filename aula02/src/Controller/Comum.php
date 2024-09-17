@@ -13,7 +13,7 @@ class Comum
         $this->ambiente = new \Twig\Environment($this->carregador);
     }
 
-    public function inicial($dados)
+    public function inicial($dados): void
     {
 
         $listaDeOpcoes = array(
@@ -36,7 +36,7 @@ class Comum
     public function sobre($dados)
     {
         $lista = \Etec\Aula02\Model\Funcionario::carregarTodos();
-        
+
         $info = array(
             "titulo" => "Caverna Corp",
             "mensagem" => "Nossa missão é ganhar dinheiro tirando o sangue de:",
@@ -45,5 +45,23 @@ class Comum
 
         // Exibe a pagina construida
         echo $this->ambiente->render("sobre.html", $info);
+
     }
+
+    public function mostrar($dados): void
+    {
+        // Exibe a pagina construida
+        echo $this->ambiente->render("cadastroFuncionario.html", $dados);
+    }
+
+    public function salvar($dados)
+    {
+        $funcionario = new \Etec\Aula02\Model\Funcionario();
+        $funcionario->nome = $dados['nome'];
+        $funcionario->sobrenome = $dados['sobrenome'];
+
+        $funcionario->salvar();
+    }
+
+
 }

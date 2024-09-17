@@ -15,5 +15,8 @@ $roteador->group(null); // Aponta para a raíz do site
 $roteador->get("/", "Comum:inicial"); // Página inicial
 $roteador->get("/sobre", "Comum:sobre"); // Sobre
 
+$roteador->get("/cadastrar", "Comum:mostrar");
+$roteador->post("/cadastrar", "Comum:salvar");
+
 // Precisa pra rota funcionar
 $roteador->dispatch();
