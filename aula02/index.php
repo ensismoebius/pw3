@@ -18,5 +18,8 @@ $roteador->get("/sobre", "Comum:sobre"); // Sobre
 $roteador->get("/cadastrar", "Comum:mostrar");
 $roteador->post("/cadastrar", "Comum:salvar");
 
+$roteador->get("/login", "Autenticacao:autenticar");
+$roteador->post("/login", "Autenticacao:autenticar");
+
 // Precisa pra rota funcionar
 $roteador->dispatch();

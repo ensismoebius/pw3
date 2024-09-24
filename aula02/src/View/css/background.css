@@ -1,0 +1,11 @@
+body {
+    background-image: url('../images/backgrounds/background.avif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.photo {
+    width: 40em;
+}

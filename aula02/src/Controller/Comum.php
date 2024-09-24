@@ -2,17 +2,8 @@
 
 namespace Etec\Aula02\Controller;
 
-class Comum
+class Comum extends Base
 {
-    private \Twig\Environment $ambiente;
-    private \Twig\Loader\FilesystemLoader $carregador;
-
-    public function __construct()
-    {
-        $this->carregador = new \Twig\Loader\FilesystemLoader("./src/View");
-        $this->ambiente = new \Twig\Environment($this->carregador);
-    }
-
     public function inicial($dados): void
     {
 

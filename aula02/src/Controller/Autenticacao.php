@@ -2,17 +2,8 @@
 
 namespace Etec\Aula02\Controller;
 
-class Autenticacao
+class Autenticacao extends Base
 {
-    private \Twig\Environment $ambiente;
-    private \Twig\Loader\FilesystemLoader $carregador;
-
-    public function __construct()
-    {
-        $this->carregador = new \Twig\Loader\FilesystemLoader("./src/View");
-        $this->ambiente = new \Twig\Environment($this->carregador);
-    }
-
     public function salvar($dados)
     {
         $f = new \Etec\Aula02\Model\Funcionario();
@@ -37,19 +28,28 @@ class Autenticacao
 
     public function autenticar($dados): void
     {
-        $login = $dados["login"];
-        $senha = $dados["senha"];
+        session_start();
+        if(isset($_SESSION["id"])){
+            header("location: /");
+            exit();
+        }
+
+        @$login = $dados["login"];
+        @$senha = $dados["senha"];
 
         $f = new \Etec\Aula02\Model\Funcionario();
         
-        if($f->carregarAutenticacao($login, $senha)){
-            session_start();
+        if(
+            !is_null($login) && 
+            !is_null($senha) && 
+            $f->carregarAutenticacao($login, $senha)
+        ){
             $_SESSION["id"] = $f->id;
             $_SESSION["nome"] = $f->nome;
 
             header("location: /");
         } else {
-            $this->ambiente->render(
+            echo $this->ambiente->render(
                 "login.html",
                 array("mensagem" => "Falha ao autenticar")
             );
